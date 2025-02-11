@@ -22,7 +22,7 @@ public class ServidorTCP extends Thread {
 
 			while (true) {
 				Socket socket = server.accept();
-				System.out.println("Ha llegado una nueva petición");
+				System.out.println("Ha llegado una nueva petición TCP");
 				
 				ProcesamientoSolicitudTCP procesamientoSolicitud = new ProcesamientoSolicitudTCP(socket, datosSensores);
 				procesamientoSolicitud.start();

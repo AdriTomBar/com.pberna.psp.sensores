@@ -34,8 +34,8 @@ public class ServidorUDP extends Thread {
 				//ha llegado una nueva petición, con los datos en objeto incoming
 				byte[] data = incoming.getData();				
 				String mensajePeticion = new String(data, 0, incoming.getLength());
-				
-				ProcesamientoSolicitudUDP procesamientoSolicitudUDP = new ProcesamientoSolicitudUDP(socketUDP, datosSensores);
+				System.out.println(mensajePeticion);
+				ProcesamientoSolicitudUDP procesamientoSolicitudUDP = new ProcesamientoSolicitudUDP(socketUDP, incoming, datosSensores);
 				procesamientoSolicitudUDP.start(); 
 			}
 		} catch (IOException e) {

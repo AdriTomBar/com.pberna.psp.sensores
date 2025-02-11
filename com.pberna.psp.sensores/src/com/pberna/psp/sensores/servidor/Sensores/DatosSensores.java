@@ -61,7 +61,7 @@ public class DatosSensores {
 		System.out.println("Sensor añadido");
 	}
 
-	private Sensor buscarSensorPorId(int sensorId) {
+	public Sensor buscarSensorPorId(int sensorId) {
 		for (Sensor sensor : listaSensores) {
 			if (sensor.getIdSensor() == sensorId) {
 				return sensor;
