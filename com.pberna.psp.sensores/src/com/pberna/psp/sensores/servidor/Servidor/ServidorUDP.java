@@ -24,11 +24,11 @@ public class ServidorUDP extends Thread {
 			// buffer para incoming data
 			byte[] buffer = new byte[65536];			
 			DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
-			
+			System.out.println("Server socket creado. Esperando datos entrantes...");
 			// communication loop
 			while (true) {
 				// 2. Esperar incoming data
-				System.out.println("Server socket creado. Esperando datos entrantes...");				
+								
 				socketUDP.receive(incoming);
 				
 				//ha llegado una nueva petición, con los datos en objeto incoming
