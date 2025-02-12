@@ -11,6 +11,7 @@ import java.net.Socket;
 
 
 import com.pberna.psp.sensores.servidor.Sensores.DatosSensores;
+import com.pberna.psp.sensores.servidor.Sensores.Sensor;
 
 public class ProcesamientoSolicitudTCP extends Thread {
 
@@ -70,6 +71,11 @@ public class ProcesamientoSolicitudTCP extends Thread {
 
 			switch (comando) {
 				case "ENCENDER_SENSOR":
+					//Se crea el sensor y se añade a la lista
+					Sensor sensor = new Sensor();
+					sensor.setIdSensor(idSensor);
+					datosSensores.aniadirSensor(sensor);
+
 					if (datosSensores.encenderSensor(idSensor)){
 						bw.write("RESPUESTA: Sensor " + idSensor + " activado");
 						bw.newLine();
@@ -109,7 +115,7 @@ public class ProcesamientoSolicitudTCP extends Thread {
 				case "SOLICITAR_ESTADO_SENSORES":
 					String respuesta = datosSensores.obtenerEstadoSensor().toString();
 					System.out.println(respuesta);
-					bw.write(respuesta);
+					bw.write(respuesta+"");
 					bw.newLine();
 					bw.flush();
 					break;

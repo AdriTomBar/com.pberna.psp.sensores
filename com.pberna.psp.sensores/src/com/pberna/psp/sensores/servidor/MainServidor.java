@@ -9,9 +9,7 @@ public class MainServidor {
 
 	public static void main(String[] args) {
 		DatosSensores datosSensores = new DatosSensores();
-		Sensor sensor1 = new Sensor();
-		sensor1.setIdSensor(1234);
-		datosSensores.aniadirSensor(sensor1);
+		
 		ServidorTCP servidorTCP = new ServidorTCP(datosSensores);
 		ServidorUDP servidorUDP = new ServidorUDP(datosSensores);
 		

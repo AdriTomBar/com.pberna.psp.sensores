@@ -38,7 +38,7 @@ public class DatosSensores {
 	}	
 
 	public  String obtenerEstadoSensor() {
-		StringBuilder texto = new StringBuilder("\nRESPUESTA:\n");
+		StringBuilder texto = new StringBuilder("RESPUESTA:");
 		for (Sensor sensor : listaSensores) {
 			texto.append("Sensor ").append(sensor.getIdSensor())
 				 .append(": ").append(sensor.getEstado())
