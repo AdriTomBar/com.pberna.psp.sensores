@@ -13,8 +13,6 @@ public class MainServidor {
 		ServidorTCP servidorTCP = new ServidorTCP(datosSensores);
 		ServidorUDP servidorUDP = new ServidorUDP(datosSensores);
 		
-		
-		
 		//lanzamos hilos de los servidores
 		servidorTCP.start();
 		servidorUDP.start();

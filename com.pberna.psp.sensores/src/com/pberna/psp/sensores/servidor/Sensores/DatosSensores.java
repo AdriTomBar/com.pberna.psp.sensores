@@ -42,7 +42,7 @@ public class DatosSensores {
 		for (Sensor sensor : listaSensores) {
 			texto.append("Sensor ").append(sensor.getIdSensor())
 				 .append(": ").append(sensor.getEstado())
-				 .append(", Umbral: ").append(sensor.getUmbral()).append("\n");
+				 .append(", Umbral: ").append(sensor.getUmbral());
 		}
 		return texto.toString();
 	}
